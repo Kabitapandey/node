@@ -4,7 +4,7 @@ const readline=require("readline");
 const bcryptjs=require("bcryptjs");
 const express=require("express")
 const app=express();
-const bodyParser=require("body-parser")
+
 
 
 let encryptionKey;
@@ -26,7 +26,6 @@ app.post("/",(req,res)=>{
 
     let {key}=req.body;
 
-    console.log(key);
     bcryptjs.compare(key,encryptionKey,(err,isMatch)=>{
            
         // if encryption key entered is valid than only the user can access the page
